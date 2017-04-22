@@ -74,20 +74,17 @@ var game = {
     var startTime = setTimeout(function(){
       clearInterval(updateTime);
       console.log('out of time');
+      // run the lose function
+
     },11*1000);
 
   },
   "showWinScreen":function(){
-    console.log(game.questions);
-    console.log(game.questionToGuess);
-    var x =game.questions.indexOf(game.questionToGuess);
-    game.questions.splice(x,1);
-    console.log(x);
+    $('#correctAnswerScreen').css({
+      "display":"flex"
+    });
     $('#gamePlayScreen').css({
       "display":"none"
-    });
-    $('#correctAnswerScreen').css({
-      "display":""
     });
     setTimeout(function(){
       $('#gamePlayScreen').css({
@@ -96,10 +93,35 @@ var game = {
       $('#correctAnswerScreen').css({
         "display":"none"
       });
+      game.displayQuestion();
+      // time = 10;
+      updateTime = setInterval(function(){
+        time--;
+         $('#time').html('0:'+time);
+       },1000);
+      startTime = setTimeout(function(){
+       clearInterval(updateTime);
+       console.log('out of time');
+     },11*1000);
     },3000);
-    game.displayQuestion();
   },
   "showLoseScreen":function(){
+
+    $('#gamePlayScreen').css({
+      "display":"none"
+    });
+    $('#wrongAnswerScreen').css({
+      "display":"flex"
+    });
+    setTimeout(function(){
+      $('#gamePlayScreen').css({
+        "display":""
+      });
+      $('#wrongAnswerScreen').css({
+        "display":"none"
+      });
+    },3000);
+    game.displayQuestion();
 
   },
   "inPlay":false,
@@ -117,13 +139,10 @@ var game = {
 
 $('#startButton').on('click',function(){
   console.log('clicked start');
-  $('#winsCount').html(game.wins);
-  $('#lossesCount').html(game.losses);
-  game.displayQuestion();
-  game.inPlay = true;
   console.log('game in play');
 
    updateTime = setInterval(function(){
+     console.log('time start');
       $('#time').html('0:'+time);
       time--;
     },1000);
@@ -133,6 +152,10 @@ $('#startButton').on('click',function(){
     console.log('out of time');
   },11*1000);
 
+  $('#winsCount').html(game.wins);
+  $('#lossesCount').html(game.losses);
+  game.displayQuestion();
+  game.inPlay = true;
 });
 
 
@@ -152,6 +175,11 @@ $('.answerContainer').on('click',function(){
       clearTimeout(startTime);
       game.wins += 1;
       game.updateScore();
+      console.log(game.questions);
+      console.log(game.questionToGuess);
+      var x =game.questions.indexOf(game.questionToGuess);
+      game.questions.splice(x,1);
+      console.log(x);
       // run the win function
       game.showWinScreen();
     }else{
@@ -159,6 +187,7 @@ $('.answerContainer').on('click',function(){
       clearInterval(updateTime);
       clearTimeout(startTime);
       game.losses += 1;
+      game.showLoseScreen()
       game.updateScore();
       // run the lose function
     }

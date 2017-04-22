@@ -1,3 +1,5 @@
-- 3 Slides for Question, Wrong, Right
+- finish the lose function
 
-- click handling for Question
+- finish win and lose screen
+
+- function for winning complete game 
