@@ -2,9 +2,96 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Trivia Game</title>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--customStyling-->
+
   </head>
   <body>
+    <!--mainContainer-->
+    <div class="container border" id="mainContainer">
+      <!--headerRow-->
+      <div class="row border" id="headerRow">
+        <div class="col-md-8">
+            <h1 id="triviaGameHeader" class="border">Trivia Game</h1>
+        </div>
+        <!--start and reset button-->
+        <div class="col-md-4 border" id="infoContainer">
+          <!--buttonsRow-->
+          <div class="row border">
+            <button type="button" name="button" class="btn btn-default" id="startButton">Start</button>
+            <button type="button" name="button" class="btn btn-default" id="resetButton">Reset</button>
+          </div>
+          <!--scoreRow-->
+          <div class="row border" id="scoreRow">
+            <!--winsCounterContainer-->
+            <div class="col-md-6 counterContainer border">
+              <h3>Wins:<span id="winsCount">1</span></h3>
+            </div>
+            <!--lossesCounterContainer-->
+            <div class="col-md-6 counterContainer border">
+              <h3>Losses:<span id="lossesCount">2</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--gamePlayRow-->
+      <div class="row border" id="gamePlayRow">
+        <!--gamePlayScreen-->
+        <div class="" id="gamePlayScreen">
+          <!--timerContainer-->
+          <div class="border" id="timerContainer">
+            <p id="time">0:03</p>
+          </div>
+          <!--questionContainer-->
+          <div class="border" id="questionContainer">
+            <p class="" id="question">What color is the sky ?</p>
+          </div>
+          <!--answersContainer-->
+          <div class="border container" id="answersContainer">
+            <!--answerOneContainer-->
+            <div class="row border answerContainer" id="answerA">
+              <h3 class="answerLetter" id="letterA">A.</h3>
+              <p class="answerContent" id="answerAContent">Blue</p>
+            </div>
+            <!--answerTwoContainer-->
+            <div class="row border answerContainer" id="answerB">
+              <h3 class="answerLetter" id="letterB">B.</h3>
+              <p class="answerContent" id="answerBContent">Green</p>
+            </div>
+            <!--answerThreeContainer-->
+            <div class="row border answerContainer" id="answerC">
+              <h3 class="answerLetter" id="letterC">C.</h3>
+              <p class="answerContent" id="answerCContent">Red</p>
+            </div>
+          </div>
+        </div>
+        <!--correctAnswerScreen
+            this might be a meme that flashes-->
+        <div class="border" id="correctAnswerScreen">
+          you got it Right !
+        </div>
+        <!--wrongAnswerScreen
+            this might also be  a meme that flashes-->
+        <div class="border" id="wrongAnswerScreen">
+          you got it Wrong !
+        </div>
+      </div>
+    </div>
 
+
+  <!--jQuery-->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <!--bootstrapJavascript-->
+  <script type="text/javascript" src="./assets/javascript/bootstrap.min.js">
+  </script>
+  <!--customJavascript-->
+  <script type="text/javascript" src="./assets/javascript/app.js">
+  </script>
   </body>
 </html>

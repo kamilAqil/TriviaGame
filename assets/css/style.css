@@ -1,0 +1,102 @@
+.border{
+  border: 1px solid black;
+}
+
+#mainContainer{
+  height: 600px;
+  width: 800px;
+  position: relative;
+}
+
+#headerRow{
+  height: 94px;
+  text-align: center;
+}
+
+#infoContainer{
+  height: 100%;
+}
+
+#scoreRow{
+  height: 61%;
+}
+
+.counterContainer{
+  height: 100%;
+}
+
+#gamePlayRow{
+  height: 370px;
+  width: 709px;
+  margin: auto;
+  position: absolute;
+  top: 26%;
+  left: 5%;
+}
+
+#gamePlayScreen{
+  /*display: none;*/
+}
+
+#timerContainer{
+  position: absolute;
+  width: 134px;
+  height: 120px;
+  top: 5%;
+  left: 3%;
+  text-align: center;
+}
+
+#time{
+  font-size: 55px;
+  margin-top: 19%;
+}
+
+#questionContainer{
+  position: absolute;
+  width: 501px;
+  height: 120px;
+  left: 25%;
+  top: 5%;
+  text-align: center;
+}
+
+#question{
+  margin-top: 9%;
+  font-size: 22px;
+}
+
+#answersContainer{
+  position: absolute;
+  width: 550px;
+  height: 151px;
+  top: 47%;
+  left: 10%;
+}
+
+.answerContainer{
+  height: 33.3%;
+}
+
+.answerLetter{
+  margin-left:4%;
+  display: inline;
+}
+
+.answerContent{
+  display: inline;
+  margin-left: 2%;
+}
+
+#correctAnswerScreen{
+  display: none;
+  height: 100%;
+  width: 100%;
+
+}
+
+#wrongAnswerScreen{
+  display: none;
+  height: 100%;
+  width: 100%;
+}
