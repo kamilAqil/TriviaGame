@@ -1,1 +1,1 @@
--add more questions to game
+- if time runs out need to run lose 

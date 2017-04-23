@@ -97,6 +97,22 @@ var game = {
       // set question to guess
       game.questionToGuess = game.questions[questionIndex];
 
+      // start timer
+      time = 10;
+      updateTime = setInterval(function(){
+
+         $('#time').html('0:'+time);
+         time--;
+       },1000);
+
+      startTime = setTimeout(function(){
+       clearInterval(updateTime);
+       console.log('out of time');
+       game.losses += 1;
+       game.showLoseScreen()
+       game.updateScore();
+     },11*1000);
+
       // console.log(question);
       $('#question').html(question);
       // console.log(answerA);
@@ -126,6 +142,9 @@ var game = {
     var startTime = setTimeout(function(){
       clearInterval(updateTime);
       console.log('out of time');
+      game.losses += 1;
+      game.showLoseScreen()
+      game.updateScore();
       // run the lose function
 
     },11*1000);
@@ -146,16 +165,19 @@ var game = {
         "display":"none"
       });
       game.displayQuestion();
-       time = 10;
-       $('#time').html('0:'+time);
-      updateTime = setInterval(function(){
-        time--;
-         $('#time').html('0:'+time);
-       },1000);
-      startTime = setTimeout(function(){
-       clearInterval(updateTime);
-       console.log('out of time');
-     },10*1000);
+    //    time = 10;
+    //    $('#time').html('0:'+time);
+    //   updateTime = setInterval(function(){
+    //     time--;
+    //      $('#time').html('0:'+time);
+    //    },1000);
+    //   startTime = setTimeout(function(){
+    //    clearInterval(updateTime);
+    //    console.log('out of time');
+    //    game.losses += 1;
+    //    game.showLoseScreen()
+    //    game.updateScore();
+    //  },10*1000);
     },3000);
   },
   "showLoseScreen":function(){
@@ -178,12 +200,12 @@ var game = {
       });
 
       game.displayQuestion();
-      time = 10;
-      $('#time').html('0:'+time);
-      updateTime = setInterval(function(){
-        time--;
-         $('#time').html('0:'+time);
-       },1000);
+      // time = 10;
+      // $('#time').html('0:'+time);
+      // updateTime = setInterval(function(){
+      //   time--;
+      //    $('#time').html('0:'+time);
+      //  },1000);
 
     },3000);
 
@@ -205,16 +227,19 @@ $('#startButton').on('click',function(){
   console.log('clicked start');
   console.log('game in play');
   game.displayQuestion();
-   updateTime = setInterval(function(){
-
-      $('#time').html('0:'+time);
-      time--;
-    },1000);
-
-   startTime = setTimeout(function(){
-    clearInterval(updateTime);
-    console.log('out of time');
-  },10*1000);
+  //  updateTime = setInterval(function(){
+  //
+  //     $('#time').html('0:'+time);
+  //     time--;
+  //   },1000);
+  //
+  //  startTime = setTimeout(function(){
+  //   clearInterval(updateTime);
+  //   console.log('out of time');
+  //   game.losses += 1;
+  //   game.showLoseScreen()
+  //   game.updateScore();
+  // },10*1000);
 
   $('#winsCount').html(game.wins);
   $('#lossesCount').html(game.losses);
