@@ -12,13 +12,22 @@
   height: 94px;
   text-align: center;
 }
+#triviaGameHeader{
+  font-size: 66px;
+  margin-top: 2%;
+}
 
 #infoContainer{
   height: 100%;
 }
 
+#winsCounterContianer{
+  border-right: 1px solid black;
+}
+
 #scoreRow{
   height: 61%;
+  border-top: 1px solid black;
 }
 
 .counterContainer{
@@ -37,6 +46,7 @@
 #gamePlayScreen{
   height: 100%;
   width: 100%;
+  /*display: none;*/
 }
 
 #timerContainer{
@@ -87,17 +97,45 @@
 .answerContent{
   display: inline;
   margin-left: 2%;
+  font-size: 22px;
+}
+
+.messageBox{
+  height: 38%;
+  width: 75%;
+  top: 29%;
+  left: 12.5%;
+  /*background-color: white;*/
+  position: absolute;
+  text-align: center;
+}
+
+.messageBoxText{
+  margin-top: 2%;
+  font-size: 81px;
+  color: white;
 }
 
 #correctAnswerScreen{
   display: none;
   height: 100%;
   width: 100%;
-
+  background-color: green;
+  position: relative;
 }
 
 #wrongAnswerScreen{
   display: none;
   height: 100%;
   width: 100%;
+  background-color: red;
+  position: relative;
+}
+
+#beatTheGameScreen{
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  position: relative;
 }

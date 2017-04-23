@@ -205,6 +205,12 @@ $('.answerContainer').on('click',function(){
           game.showWinScreen();
         }else{
           console.log("beat the game");
+          $('#gamePlayScreen').css({
+            "display":"none"
+          });
+          $('#beatTheGameScreen').css({
+            "display":"flex"
+          });
         }
 
       }else{
@@ -217,4 +223,11 @@ $('.answerContainer').on('click',function(){
         // run the lose function
       }
   }
+});
+
+
+// when the reset button is clicked
+$('#resetButton').on('click',function(){
+  console.log('reset button clicked');
+  location.reload();
 });

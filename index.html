@@ -15,23 +15,23 @@
       <!--headerRow-->
       <div class="row border" id="headerRow">
         <div class="col-md-8">
-            <h1 id="triviaGameHeader" class="border">Trivia Game</h1>
+            <h1 id="triviaGameHeader" class="">Trivia Game</h1>
         </div>
         <!--start and reset button-->
         <div class="col-md-4 border" id="infoContainer">
           <!--buttonsRow-->
-          <div class="row border">
+          <div class="row">
             <button type="button" name="button" class="btn btn-default" id="startButton">Start</button>
             <button type="button" name="button" class="btn btn-default" id="resetButton">Reset</button>
           </div>
           <!--scoreRow-->
-          <div class="row border" id="scoreRow">
+          <div class="row" id="scoreRow">
             <!--winsCounterContainer-->
-            <div class="col-md-6 counterContainer border">
+            <div class="col-md-6 counterContainer" id="winsCounterContianer">
               <h3>Wins:<span id="winsCount">0</span></h3>
             </div>
             <!--lossesCounterContainer-->
-            <div class="col-md-6 counterContainer border">
+            <div class="col-md-6 counterContainer">
               <h3>Losses:<span id="lossesCount">0</span></h3>
             </div>
           </div>
@@ -71,13 +71,26 @@
         <!--correctAnswerScreen
             this might be a meme that flashes-->
         <div class="border" id="correctAnswerScreen">
-          <p>you got it Right !</p>
+          <div class="messageBox" id="correctMessageBox">
+            <p class="messageBoxText">Correct!</p>
+          </div>
         </div>
         <!--wrongAnswerScreen
             this might also be  a meme that flashes-->
         <div class="border" id="wrongAnswerScreen">
-          <p>  you got it Wrong !</p>
+          <div class="messageBox" id="wrongMessageBox">
+            <p class="messageBoxText">Wrong!</p>
+          </div>
         </div>
+
+        <!--beatTheGameScreen
+            this might be a meme that flashes-->
+        <div class="border" id="beatTheGameScreen">
+          <div class="messageBox" id="correctMessageBox">
+            <p class="messageBoxText">Beat The Game!</p>
+          </div>
+        </div>
+
       </div>
     </div>
 

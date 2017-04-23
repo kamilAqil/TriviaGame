@@ -1,4 +1,3 @@
+-styling for the header
 
-- finish win and lose screen
-
-- function for winning complete game 
+-add more questions to game
