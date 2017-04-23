@@ -1,4 +1,3 @@
-- finish the lose function
 
 - finish win and lose screen
 

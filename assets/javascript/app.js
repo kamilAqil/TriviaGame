@@ -1,4 +1,4 @@
-var time = 10;
+var time = 9;
 var updateTime = undefined;
 var startTime = undefined;
 
@@ -41,23 +41,29 @@ var game = {
   "questionToGuess": undefined,
   "rightAnswer" : undefined,
   "displayQuestion" : function(){
-    var questionIndex = game.randomIndexPicker();
-    var question = game.questions[questionIndex].question;
-    var answerA = game.questions[questionIndex].answerA.answer;
-    var answerB = game.questions[questionIndex].answerB.answer;
-    var answerC = game.questions[questionIndex].answerC.answer;
+    if(game.questions.length !==0){
+      var questionIndex = game.randomIndexPicker();
+      var question = game.questions[questionIndex].question;
+      var answerA = game.questions[questionIndex].answerA.answer;
+      var answerB = game.questions[questionIndex].answerB.answer;
+      var answerC = game.questions[questionIndex].answerC.answer;
 
-    // set question to guess
-    game.questionToGuess = game.questions[questionIndex];
+      // set question to guess
+      game.questionToGuess = game.questions[questionIndex];
 
-    // console.log(question);
-    $('#question').html(question);
-    // console.log(answerA);
-    $('#answerAContent').html(answerA);
-    // console.log(answerB);
-    $('#answerBContent').html(answerB);
-    // console.log(answerC);
-    $('#answerCContent').html(answerC);
+      // console.log(question);
+      $('#question').html(question);
+      // console.log(answerA);
+      $('#answerAContent').html(answerA);
+      // console.log(answerB);
+      $('#answerBContent').html(answerB);
+      // console.log(answerC);
+      $('#answerCContent').html(answerC);
+    }else{
+      console.log("you beat the game");
+
+    }
+
   },
   "setRightAnswer" : function(){},
   "updateScore":function(){
@@ -94,7 +100,8 @@ var game = {
         "display":"none"
       });
       game.displayQuestion();
-      // time = 10;
+       time = 10;
+       $('#time').html('0:'+time);
       updateTime = setInterval(function(){
         time--;
          $('#time').html('0:'+time);
@@ -102,10 +109,13 @@ var game = {
       startTime = setTimeout(function(){
        clearInterval(updateTime);
        console.log('out of time');
-     },11*1000);
+     },10*1000);
     },3000);
   },
   "showLoseScreen":function(){
+
+    clearInterval(updateTime);
+    clearTimeout(startTime);
 
     $('#gamePlayScreen').css({
       "display":"none"
@@ -120,8 +130,16 @@ var game = {
       $('#wrongAnswerScreen').css({
         "display":"none"
       });
+
+      game.displayQuestion();
+      time = 10;
+      $('#time').html('0:'+time);
+      updateTime = setInterval(function(){
+        time--;
+         $('#time').html('0:'+time);
+       },1000);
+
     },3000);
-    game.displayQuestion();
 
   },
   "inPlay":false,
@@ -140,9 +158,9 @@ var game = {
 $('#startButton').on('click',function(){
   console.log('clicked start');
   console.log('game in play');
-
+  game.displayQuestion();
    updateTime = setInterval(function(){
-     console.log('time start');
+
       $('#time').html('0:'+time);
       time--;
     },1000);
@@ -150,11 +168,10 @@ $('#startButton').on('click',function(){
    startTime = setTimeout(function(){
     clearInterval(updateTime);
     console.log('out of time');
-  },11*1000);
+  },10*1000);
 
   $('#winsCount').html(game.wins);
   $('#lossesCount').html(game.losses);
-  game.displayQuestion();
   game.inPlay = true;
 });
 
@@ -164,32 +181,40 @@ $('#startButton').on('click',function(){
 // the option clicked
 $('.answerContainer').on('click',function(){
   // console.log($(this).children('p').html());
+  clearInterval(updateTime);
   if (game.inPlay == true){
+
     var answerClicked = $(this).attr("id");
     console.log(answerClicked);
     var correct = game.questionToGuess[answerClicked].correct;
     console.log(correct);
-    if (correct) {
-      console.log('you got it');
-      clearInterval(updateTime);
-      clearTimeout(startTime);
-      game.wins += 1;
-      game.updateScore();
-      console.log(game.questions);
-      console.log(game.questionToGuess);
-      var x =game.questions.indexOf(game.questionToGuess);
-      game.questions.splice(x,1);
-      console.log(x);
-      // run the win function
-      game.showWinScreen();
-    }else{
-      console.log("wrong");
-      clearInterval(updateTime);
-      clearTimeout(startTime);
-      game.losses += 1;
-      game.showLoseScreen()
-      game.updateScore();
-      // run the lose function
-    }
+
+      if (correct) {
+        console.log('you got it');
+        clearInterval(updateTime);
+        clearTimeout(startTime);
+        game.wins += 1;
+        game.updateScore();
+        console.log(game.questions);
+        console.log(game.questionToGuess);
+        var x =game.questions.indexOf(game.questionToGuess);
+        game.questions.splice(x,1);
+        console.log(x);
+        // run the win function
+        if(game.questions.length!==0){
+          game.showWinScreen();
+        }else{
+          console.log("beat the game");
+        }
+
+      }else{
+        console.log("wrong");
+        clearInterval(updateTime);
+        clearTimeout(startTime);
+        game.losses += 1;
+        game.showLoseScreen()
+        game.updateScore();
+        // run the lose function
+      }
   }
 });
