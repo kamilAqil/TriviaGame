@@ -6,19 +6,33 @@
   height: 600px;
   width: 800px;
   position: relative;
+  margin-top: 5%;
+  background-color: #f1faff;
 }
 
 #headerRow{
   height: 94px;
   text-align: center;
+  border-bottom: 1px solid black;
 }
 #triviaGameHeader{
-  font-size: 66px;
-  margin-top: 2%;
+  font-size: 43px;
+  margin-top: 6%;
+  font-family: 'Press Start 2P', cursive;
+  background: -webkit-linear-gradient(left top, purple, green, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+#triviaGameHeaderCol{
+  height: 100%;
+}
+
+
 
 #infoContainer{
   height: 100%;
+  border-left: 1px solid black;
 }
 
 #winsCounterContianer{
@@ -37,6 +51,7 @@
 #gamePlayRow{
   height: 370px;
   width: 709px;
+  border: 1px solid white;
   margin: auto;
   position: absolute;
   top: 26%;
@@ -46,6 +61,7 @@
 #gamePlayScreen{
   height: 100%;
   width: 100%;
+  background-color: #008048;
   /*display: none;*/
 }
 
@@ -56,20 +72,24 @@
   top: 5%;
   left: 3%;
   text-align: center;
+  border: 3px solid white;
 }
 
 #time{
   font-size: 55px;
   margin-top: 19%;
+  color:  white;
 }
 
 #questionContainer{
   position: absolute;
+  border: 1px solid white;
   width: 501px;
   height: 120px;
   left: 25%;
   top: 5%;
   text-align: center;
+  background-color: white;
 }
 
 #question{
@@ -77,8 +97,21 @@
   font-size: 22px;
 }
 
+h3{
+  background: -webkit-linear-gradient(left top, purple, green, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btnz{
+  color: white;
+  background-color: #4100e6;
+  border: 1px solid white;
+}
+
 #answersContainer{
   position: absolute;
+  border: 1px solid white;
   width: 550px;
   height: 151px;
   top: 47%;
@@ -87,6 +120,7 @@
 
 .answerContainer{
   height: 33.3%;
+  background-color: white;
 }
 
 .answerLetter{

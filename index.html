@@ -6,6 +6,7 @@
     <!--bootstrap-->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <!--customStyling-->
 
   </head>
@@ -13,16 +14,16 @@
     <!--mainContainer-->
     <div class="container border" id="mainContainer">
       <!--headerRow-->
-      <div class="row border" id="headerRow">
-        <div class="col-md-8">
+      <div class="row" id="headerRow">
+        <div class="col-md-8" id="triviaGameHeaderCol">
             <h1 id="triviaGameHeader" class="">Trivia Game</h1>
         </div>
         <!--start and reset button-->
-        <div class="col-md-4 border" id="infoContainer">
+        <div class="col-md-4" id="infoContainer">
           <!--buttonsRow-->
           <div class="row">
-            <button type="button" name="button" class="btn btn-default" id="startButton">Start</button>
-            <button type="button" name="button" class="btn btn-default" id="resetButton">Reset</button>
+            <button type="button" name="button" class="btn btn-default btnz" id="startButton">Start</button>
+            <button type="button" name="button" class="btn btn-default btnz" id="resetButton">Reset</button>
           </div>
           <!--scoreRow-->
           <div class="row" id="scoreRow">
@@ -38,19 +39,19 @@
         </div>
       </div>
       <!--gamePlayRow-->
-      <div class="row border" id="gamePlayRow">
+      <div class="row" id="gamePlayRow">
         <!--gamePlayScreen-->
         <div class="" id="gamePlayScreen">
           <!--timerContainer-->
-          <div class="border" id="timerContainer">
+          <div id="timerContainer">
             <p id="time">0:10</p>
           </div>
           <!--questionContainer-->
-          <div class="border" id="questionContainer">
+          <div id="questionContainer">
             <p class="" id="question"></p>
           </div>
           <!--answersContainer-->
-          <div class="border container" id="answersContainer">
+          <div class="container" id="answersContainer">
             <!--answerOneContainer-->
             <div class="row border answerContainer" id="answerA">
               <h3 class="answerLetter" id="letterA">A.</h3>

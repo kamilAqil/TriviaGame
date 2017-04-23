@@ -31,7 +31,53 @@ var game = {
         "answer": "red",
         "correct": false
       }
-  }],
+  },
+  {
+    "question":"What is a traditional fermented Korean side dish",
+        "answerA" : {
+          "answer" : "French Fries",
+          "correct" : false
+        },
+        "answerB" : {
+          "answer": "Kimchi",
+          "correct": true
+        },
+        "answerC" : {
+          "answer": "Beans",
+          "correct": false
+        }
+      },
+      {
+        "question":"Polar bears feed mainly on what animal?",
+            "answerA" : {
+              "answer" : "Penguins",
+              "correct" : true
+            },
+            "answerB" : {
+              "answer": "Ostriches",
+              "correct": false
+            },
+            "answerC" : {
+              "answer": "Koalas",
+              "correct": false
+            }
+          },
+          {
+            "question":"Who was the first NASA astronaut to visit space twice",
+                "answerA" : {
+                  "answer" : "Buzz Lightyear",
+                  "correct" : false
+                },
+                "answerB" : {
+                  "answer": "Buzz Aldrin",
+                  "correct": false
+                },
+                "answerC" : {
+                  "answer": "Gris Grissam",
+                  "correct": true
+                }
+              },
+],
   "indexesToGuess" : [],
   "randomIndexPicker": function(){
     var indexToDisplay = Math.floor((Math.random() * game.questions.length));
