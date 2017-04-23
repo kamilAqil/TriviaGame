@@ -63,7 +63,7 @@
   height: 100%;
   width: 100%;
   background-color: #008048;
-  border-radius: 20px;
+  -webkit-border-radius: 20px;
   /*display: none;*/
 }
 
